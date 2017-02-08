@@ -57,6 +57,8 @@ public class Select {
 			}
 			 writer.print(stringBuilder.toString());
 			    writer.close();
+			    
+			    
 			
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -68,6 +70,15 @@ public class Select {
 			
 			
 		}
+		
+		String cmd = "python runBlast.py "+number;
+		try {
+			Runtime.getRuntime().exec(cmd);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		number++;
 		select = false;
 		}
