@@ -74,6 +74,15 @@ public class Select {
 		}
 		
 		String cmd = "python runBlast.py "+number;
+		
+
+		try {
+			Runtime.getRuntime().exec(cmd);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		File file = new File("./");
 		String[] directories = file.list(new FilenameFilter() {
 		  @Override
@@ -82,13 +91,6 @@ public class Select {
 		  }
 		});
 		System.out.println(Arrays.toString(directories));
-
-		try {
-			Runtime.getRuntime().exec(cmd);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		number++;
 		select = false;
