@@ -1,10 +1,12 @@
 package identificationjava;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 
@@ -72,6 +74,15 @@ public class Select {
 		}
 		
 		String cmd = "python runBlast.py "+number;
+		File file = new File("/path/to/directory");
+		String[] directories = file.list(new FilenameFilter() {
+		  @Override
+		  public boolean accept(File current, String name) {
+		    return new File(current, name).isDirectory();
+		  }
+		});
+		System.out.println(Arrays.toString(directories));
+
 		try {
 			Runtime.getRuntime().exec(cmd);
 		} catch (IOException e) {
