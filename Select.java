@@ -77,8 +77,10 @@ public class Select {
 		
 
 		try {
-			Runtime.getRuntime().exec(cmd);
-		} catch (IOException e) {
+			Process p = Runtime.getRuntime().exec(cmd);
+			p.waitFor();
+			
+		} catch (IOException | InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
