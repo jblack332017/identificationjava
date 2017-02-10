@@ -74,7 +74,7 @@ public class Select {
 		}
 		
 		String cmd = "python runBlast.py "+number;
-		File file = new File("");
+		File file = new File("~/identification");
 		String[] directories = file.list(new FilenameFilter() {
 		  @Override
 		  public boolean accept(File current, String name) {
