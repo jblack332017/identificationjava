@@ -6,13 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
 	
 	String outputFile;
-	ArrayList<Organism> organisms = new ArrayList<>();
+	TreeMap<String,Organism> organisms = new TreeMap<>();
 
 	public Parser(String outputFile) {
 		super();
@@ -23,9 +24,16 @@ public class Parser {
 		final File folder = new File(outputFile);
 		for (final File fileEntry : folder.listFiles()) {
 	            File output = new File(fileEntry.getPath());
-	            
+        		Organism organism = new Organism(fileEntry.getName());
+        		
+        		if (organisms.containsKey(fileEntry.getName()))
+        		{
+        			organism = organisms.get(fileEntry.getName());
+        			organism.newHits();
+        		}
+
 	            try (BufferedReader br = new BufferedReader(new FileReader(output))) {
-					Organism organism = new Organism(fileEntry.getName());
+
 	                String line;
 	                Hit hit = new Hit();
 	                while ((line = br.readLine()) != null) {
@@ -79,7 +87,7 @@ public class Parser {
 
 	                }
 	            
-	            organisms.add(organism);
+	            organisms.put(fileEntry.getName(), organism);
 	            //System.out.print(organism.hits.size()+"\n");
 	            
 	            

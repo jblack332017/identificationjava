@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Organism {
 	String name;
 	public ArrayList<Hit> hits = new ArrayList<>();
-	
+	public ArrayList<ArrayList<Hit>> hitsHolder = new ArrayList<>();
 	
 	
 	public Organism(String name) {
@@ -31,6 +31,11 @@ public class Organism {
 
 	public void setHits(ArrayList<Hit> hits) {
 		this.hits = hits;
+	}
+	
+	public void newHits(){
+		hitsHolder.add(hits);
+		hits = new ArrayList<>();
 	}
 	
 	

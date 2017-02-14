@@ -7,12 +7,13 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.TreeMap;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 
 public class Select {
 
-	ArrayList<Organism> organisms = new ArrayList<>();
+	TreeMap<String,Organism> organisms;
 
 	public Select() {
 		super();
@@ -20,9 +21,10 @@ public class Select {
 	}
 	
 	public void selectSeq(){
-		boolean select = true;
 		int number = 1;
-		while (select){
+		for (String topOrganismKey : organisms.keySet()) { //This is the one that will have the database created against it
+			Organism topOrganism = organisms.get(topOrganismKey);
+		
 		
 		try{
 			File directory = new File(String.valueOf("inputFastas"+number));
@@ -36,7 +38,8 @@ public class Select {
 		}
 		
 		
-		for (Organism organism : organisms) {
+		for (String organismKey : organisms.keySet()) {
+			Organism organism = organisms.get(organismKey);
 			
 			PrintWriter writer;
 			try {
@@ -95,7 +98,6 @@ public class Select {
 		System.out.println(Arrays.toString(directories));
 		
 		number++;
-		select = false;
 		}
 	}
 	
