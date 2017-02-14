@@ -22,9 +22,10 @@ public class Select {
 	
 	public void selectSeq(){
 		int number = 1;
+		int topCounter = 0;
 		for (String topOrganismKey : organisms.keySet()) { //This is the one that will have the database created against it
 			Organism topOrganism = organisms.get(topOrganismKey);
-		
+			topCounter++;
 		
 		try{
 			File directory = new File(String.valueOf("inputFastas"+number));
@@ -37,43 +38,45 @@ public class Select {
 			// TODO: handle exception
 		}
 		
-		
+		int bottomCounter =0;
 		for (String organismKey : organisms.keySet()) {
-			Organism organism = organisms.get(organismKey);
-			
-			PrintWriter writer;
-			try {
-				writer = new PrintWriter("inputFastas"+number+"/"+organism.getName(), "UTF-8");
-			
-		    StringBuilder stringBuilder = new StringBuilder();
-			
-			for (int i=0; i< organism.hits.size();i++)
-			{
-				Hit hit = organism.hits.get(i);
+			bottomCounter++;
+				if (bottomCounter>=topCounter){
+				Organism organism = organisms.get(organismKey);
 				
+				PrintWriter writer;
+				try {
+					writer = new PrintWriter("inputFastas"+number+"/"+organism.getName(), "UTF-8");
+				
+			    StringBuilder stringBuilder = new StringBuilder();
+				
+				for (int i=0; i< organism.hits.size();i++)
+				{
+					Hit hit = organism.hits.get(i);
+					
+					    
+					stringBuilder.append(">");
+					stringBuilder.append(hit.id);
+				    stringBuilder.append(System.getProperty("line.separator"));
+				    stringBuilder.append(hit.getHitSequence());
+				    stringBuilder.append(System.getProperty("line.separator"));			    
+	
+				   
+				}
+				 writer.print(stringBuilder.toString());
+				    writer.close();
 				    
-				stringBuilder.append(">");
-				stringBuilder.append(hit.id);
-			    stringBuilder.append(System.getProperty("line.separator"));
-			    stringBuilder.append(hit.getHitSequence());
-			    stringBuilder.append(System.getProperty("line.separator"));			    
-
-			   
+				    
+				
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
-			 writer.print(stringBuilder.toString());
-			    writer.close();
-			    
-			    
-			
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			
 		}
 		
 		String cmd = "python runBlast.py "+number;
