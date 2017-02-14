@@ -25,10 +25,12 @@ public class Parser {
 		for (final File fileEntry : folder.listFiles()) {
 	            File output = new File(fileEntry.getPath());
         		Organism organism = new Organism(fileEntry.getName());
-        		
-        		if (organisms.containsKey(fileEntry.getName()))
+        		String fileName = fileEntry.getName();
+    			System.out.println(fileName);
+
+        		if (organisms.containsKey(fileName))
         		{
-        			organism = organisms.get(fileEntry.getName());
+        			organism = organisms.get(fileName);
         			organism.newHits();
         			System.out.println("new hits");
         		}
@@ -88,7 +90,7 @@ public class Parser {
 
 	                }
 	            
-	            organisms.put(fileEntry.getName(), organism);
+	            organisms.put(fileName, organism);
 	            //System.out.print(organism.hits.size()+"\n");
 	            
 	            
