@@ -18,6 +18,7 @@ public class Parser {
 	public Parser(String outputFile) {
 		super();
 		this.outputFile = outputFile;
+		organisms = OrganismHolder.getInstance().getOrganisms();
 	}
 	
 	public void populateHits(){
