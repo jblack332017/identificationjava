@@ -30,6 +30,7 @@ public class Parser {
         		{
         			organism = organisms.get(fileEntry.getName());
         			organism.newHits();
+        			System.out.println("new hits");
         		}
 
 	            try (BufferedReader br = new BufferedReader(new FileReader(output))) {
