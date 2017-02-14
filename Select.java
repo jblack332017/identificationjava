@@ -85,7 +85,8 @@ public class Select {
 		try {
 			Process p = Runtime.getRuntime().exec(cmd);
 			p.waitFor();
-			new Parser("blastOutput"+number);
+			Parser parser= new Parser("blastOutput"+number);
+			parser.populateHits();
 			
 		} catch (IOException | InterruptedException e) {
 			// TODO Auto-generated catch block
