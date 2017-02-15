@@ -64,6 +64,10 @@ public class Select {
 				}
 				 writer.print(stringBuilder.toString());
 				    writer.close();
+				    if (number+1 == organisms.size())
+					{
+						System.out.println(stringBuilder.toString());
+					}
 				    
 				    
 				
@@ -74,6 +78,8 @@ public class Select {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				
 				
 			}
 		}
