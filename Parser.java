@@ -53,7 +53,7 @@ public class Parser {
 	    	            
 	                	
 	                	
-	    	            if (line.contains("</Hit>")&&hit.getGaps()>0){      	    	        
+	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength){      	    	        
 	    	            	organism.addHit(hit);
 	    	            }
 	    	            else if (line.contains("<Hit>")) {
@@ -87,6 +87,12 @@ public class Parser {
 						}
 	    	            else if (line.contains("<Hsp_hseq>")) {
 							hit.setHitSequence(value);
+						}
+	    	            else if (line.contains("<Hsp_positive>")) {
+							hit.setPositive(Integer.parseInt(value));
+						}
+	    	            else if (line.contains("<Hsp_align-len>")) {
+							hit.setAlignLength(Integer.parseInt(value));
 						}
 
 	                }

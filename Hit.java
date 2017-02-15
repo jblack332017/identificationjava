@@ -7,9 +7,13 @@ public class Hit{
 	int queryTo =0;
 	int hitFrom =0;
 	int hitTo =0;
+	int positive = 0;
+	int alignLength =0;
+	
 	String querySequence ="";
 	String hitSequence ="";
 	String id ="";
+	
 	
 
 	public int getGaps() {
@@ -83,6 +87,23 @@ public class Hit{
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	public int getPositive() {
+		return positive;
+	}
+
+	public void setPositive(int positive) {
+		this.positive = positive;
+	}
+
+	public int getAlignLength() {
+		return alignLength;
+	}
+
+	public void setAlignLength(int alignLength) {
+		this.alignLength = alignLength;
+	}
+	
 	
 	
 	

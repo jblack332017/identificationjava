@@ -53,8 +53,7 @@ public class Select {
 				for (int i=0; i< organism.hits.size();i++)
 				{
 					Hit hit = organism.hits.get(i);
-					
-					    
+										    
 					stringBuilder.append(">");
 					stringBuilder.append(hit.id);
 				    stringBuilder.append(System.getProperty("line.separator"));
