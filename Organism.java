@@ -38,6 +38,19 @@ public class Organism {
 		hits = new ArrayList<>();
 	}
 	
+	public boolean containsID(String id) {
+		for (Hit hit: hits)
+		{
+			if (hit.getId().equals(id))
+			{
+				return true;
+			}
+		}
+		
+		return false;
+		
+	}
+	
 	
 	
 

@@ -53,7 +53,7 @@ public class Parser {
 	    	            
 	                	
 	                	
-	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength){      	    	        
+	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength&&!organism.containsID(hit.getId())){      	    	        
 	    	            	organism.addHit(hit);
 	    	            }
 	    	            else if (line.contains("<Hit>")) {
