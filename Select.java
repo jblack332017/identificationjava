@@ -78,30 +78,33 @@ public class Select {
 			}
 		}
 		
-		String cmd = "python runBlast.py "+number;
+		if (number+1 == organisms.size()){
 		
-
-		try {
-			Process p = Runtime.getRuntime().exec(cmd);
-			p.waitFor();
-			Parser parser= new Parser("blastOutput"+number);
-			parser.populateHits();
+			String cmd = "python runBlast.py "+number;
 			
-		} catch (IOException | InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				Process p = Runtime.getRuntime().exec(cmd);
+				p.waitFor();
+				Parser parser= new Parser("blastOutput"+number);
+				parser.populateHits();
+				
+			} catch (IOException | InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			File file = new File("./");
+			String[] directories = file.list(new FilenameFilter() {
+			  @Override
+			  public boolean accept(File current, String name) {
+			    return new File(current, name).isDirectory();
+			  }
+			});
+			System.out.println(Arrays.toString(directories));
+			
+			number++;
 		}
 		
-		File file = new File("./");
-		String[] directories = file.list(new FilenameFilter() {
-		  @Override
-		  public boolean accept(File current, String name) {
-		    return new File(current, name).isDirectory();
-		  }
-		});
-		System.out.println(Arrays.toString(directories));
-		
-		number++;
 		}
 	}
 	
