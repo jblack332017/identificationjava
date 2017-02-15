@@ -70,12 +70,13 @@ public class Select {
 				    		{
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
-				    				System.out.println(newOrganism.name);
 				    				if (first)
 				    				{
 				    					System.out.println(newHit.getHitSequence());
 				    					first = false;
 				    				}
+				    				System.out.println(newOrganism.name);
+				    				
 				    			}
 				    		}
 				    	}
