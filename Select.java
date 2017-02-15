@@ -75,7 +75,7 @@ public class Select {
 				    					System.out.println(newHit.getHitSequence());
 				    					first = false;
 				    				}
-				    				System.out.println(newOrganism.name);
+				    				System.out.println(newHit.getQuerySequence());
 				    				
 				    			}
 				    		}
