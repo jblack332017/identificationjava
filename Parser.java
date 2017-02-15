@@ -27,13 +27,13 @@ public class Parser {
 	            File output = new File(fileEntry.getPath());
         		Organism organism = new Organism(fileEntry.getName());
         		String fileName = fileEntry.getName();
-    			System.out.println(fileName);
+    			//System.out.println(fileName);
 
         		if (organisms.containsKey(fileName))
         		{
         			organism = organisms.get(fileName);
         			organism.newHits();
-        			System.out.println("new hits");
+        			//System.out.println("new hits");
         		}
 
 	            try (BufferedReader br = new BufferedReader(new FileReader(output))) {
