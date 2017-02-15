@@ -58,16 +58,30 @@ public class Select {
 					stringBuilder.append(hit.id);
 				    stringBuilder.append(System.getProperty("line.separator"));
 				    stringBuilder.append(hit.getHitSequence());
-				    stringBuilder.append(System.getProperty("line.separator"));			    
+				    stringBuilder.append(System.getProperty("line.separator"));	
+				    
+				    if (number == organisms.size()&&bottomCounter == organisms.size())
+					{
+				    	System.out.println(organism.name);
+				    	for (String key: organisms.keySet())
+				    	{
+				    		Organism newOrganism = organisms.get(key);
+				    		for (Hit newHit: organism.hits)
+				    		{
+				    			if (newHit.getId().equals(hit.getId()))
+				    			{
+				    				System.out.print(newOrganism.name);
+				    			}
+				    		}
+				    	}
+						//System.out.println(stringBuilder.toString());
+					}
 	
 				   
 				}
 				 writer.print(stringBuilder.toString());
 				    writer.close();
-				    if (number == organisms.size()&&bottomCounter == organisms.size())
-					{
-						System.out.println(stringBuilder.toString());
-					}
+				    
 				    
 				    
 				
