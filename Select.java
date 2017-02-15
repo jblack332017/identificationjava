@@ -70,7 +70,7 @@ public class Select {
 				    		{
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
-				    				System.out.print(newOrganism.name);
+				    				System.out.println(newOrganism.name);
 				    			}
 				    		}
 				    	}
