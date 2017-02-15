@@ -62,7 +62,6 @@ public class Select {
 				    
 				    if (number == organisms.size()&&bottomCounter == organisms.size())
 					{
-				    	System.out.println(organism.name);
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
@@ -120,7 +119,7 @@ public class Select {
 			    return new File(current, name).isDirectory();
 			  }
 			});
-			System.out.println(Arrays.toString(directories));
+			//System.out.println(Arrays.toString(directories));
 			
 			number++;
 		}
