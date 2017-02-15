@@ -64,7 +64,7 @@ public class Select {
 				}
 				 writer.print(stringBuilder.toString());
 				    writer.close();
-				    if (topCounter+1 == organisms.size())
+				    if (number+1 == organisms.size()&&bottomCounter+1 == organisms.size())
 					{
 						System.out.println(number+1+" "+organisms.size());
 					}
