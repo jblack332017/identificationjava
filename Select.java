@@ -66,7 +66,7 @@ public class Select {
 				    writer.close();
 				    if (number+1 == organisms.size())
 					{
-						System.out.println(stringBuilder.toString());
+						System.out.println("here");
 					}
 				    
 				    
