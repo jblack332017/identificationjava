@@ -62,18 +62,22 @@ public class Select {
 				    
 				    if (number == organisms.size()&&bottomCounter == organisms.size())
 					{
+				    	boolean first = false;
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
-				    		for (Hit newHit: organism.hits)
+				    		for (Hit newHit: newOrganism.hits)
 				    		{
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
 				    				System.out.println(newOrganism.name);
+				    				if (first)
+				    				{
+				    					System.out.println(newHit.getHitSequence());
+				    				}
 				    			}
 				    		}
 				    	}
-						//System.out.println(stringBuilder.toString());
 					}
 	
 				   
