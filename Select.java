@@ -72,10 +72,10 @@ public class Select {
 				    			{
 				    				if (first)
 				    				{
-				    					System.out.println(newHit.getHitSequence());
+				    					System.out.println("orginal: " +newHit.getHitSequence());
 				    					first = false;
 				    				}
-				    				System.out.println(newHit.getQuerySequence());
+				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());
 				    				
 				    			}
 				    		}
