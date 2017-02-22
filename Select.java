@@ -40,7 +40,6 @@ public class Select {
 	public void selectSeq(){
 		int number = 1;
 		int topCounter = 0;
-		System.out.println(organisms.size());
 		for (int q=0; q< organisms.size();q++) { //This is the one that will have the database created against it
 			//Organism topOrganism = organisms.get(topOrganismKey);
 		
@@ -66,10 +65,14 @@ public class Select {
 					writer = new PrintWriter("inputFastas"+number+"/"+organism.getName(), "UTF-8");
 				
 			    StringBuilder stringBuilder = new StringBuilder();
+				System.out.println(organisms.size());
+
 				
 				for (int i=0; i< organism.hits.size();i++)
 				{
 					Hit hit = organism.hits.get(i);
+					System.out.println(organisms.size());
+
 										    
 					stringBuilder.append(">");
 					stringBuilder.append(hit.id);
@@ -120,7 +123,7 @@ public class Select {
 			}
 		}
 		
-		if (number+1 == organisms.size()){
+		if (number+1 < organisms.size()){
 		
 			String cmd = "python runBlast.py "+number;
 			
