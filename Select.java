@@ -41,7 +41,7 @@ public class Select {
 		int number = 1;
 		int topCounter = 0;
 		for (String topOrganismKey : organisms.keySet()) { //This is the one that will have the database created against it
-			Organism topOrganism = organisms.get(topOrganismKey);
+			//Organism topOrganism = organisms.get(topOrganismKey);
 			topCounter++;
 		
 		try{
