@@ -31,6 +31,7 @@ public class Select {
 			if (first)
 			{
 				originalName = fileEntry.getName();
+				first = false;
 			}
 		
 		}
