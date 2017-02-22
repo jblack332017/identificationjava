@@ -41,9 +41,8 @@ public class Select {
 		int number = 1;
 		int topCounter = 0;
 		System.out.println(organisms.size());
-		for (String topOrganismKey : organisms.keySet()) { //This is the one that will have the database created against it
+		for (int i=0; i< organisms.size();i++) { //This is the one that will have the database created against it
 			//Organism topOrganism = organisms.get(topOrganismKey);
-			topCounter++;
 		
 		try{
 			File directory = new File(String.valueOf("inputFastas"+number));
