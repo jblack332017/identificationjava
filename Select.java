@@ -40,6 +40,7 @@ public class Select {
 	public void selectSeq(){
 		int number = 1;
 		int topCounter = 0;
+		System.out.println(organisms.size());
 		for (String topOrganismKey : organisms.keySet()) { //This is the one that will have the database created against it
 			//Organism topOrganism = organisms.get(topOrganismKey);
 			topCounter++;
