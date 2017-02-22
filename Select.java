@@ -41,7 +41,7 @@ public class Select {
 		int number = 1;
 		int topCounter = 0;
 		System.out.println(organisms.size());
-		for (int i=0; i< organisms.size();i++) { //This is the one that will have the database created against it
+		for (int q=0; q< organisms.size();q++) { //This is the one that will have the database created against it
 			//Organism topOrganism = organisms.get(topOrganismKey);
 		
 		try{
