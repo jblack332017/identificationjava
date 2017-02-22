@@ -24,7 +24,7 @@ public class Select {
 	}
 	
 	public void getOriginalName(){
-		final File folder = new File("blastdb0");
+		final File folder = new File("inputFastas0");
 		boolean first = true;
 		for (final File fileEntry : folder.listFiles()) {
 			
