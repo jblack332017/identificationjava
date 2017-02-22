@@ -9,15 +9,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeMap;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.jar.Attributes.Name;
 
 
 public class Select {
 
 	TreeMap<String,Organism> organisms;
+	String originalName = ""; 
 
 	public Select() {
 		super();
 		this.organisms = OrganismHolder.getInstance().getOrganisms();
+		getOriginalName();
+	}
+	
+	public void getOriginalName(){
+		final File folder = new File("blastdb0");
+		boolean first = true;
+		for (final File fileEntry : folder.listFiles()) {
+			
+			if (first)
+			{
+				originalName = fileEntry.getName();
+			}
+		
+		}
 	}
 	
 	public void selectSeq(){
@@ -72,11 +88,11 @@ public class Select {
 				    			{
 				    				if (first)
 				    				{
-				    					System.out.println("orginal: " +newHit.getHitSequence());
+				    					System.out.println(originalName+": " +newHit.getHitSequence());
 				    					first = false;
 				    				}
 				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());
-				    				
+				    		
 				    			}
 				    		}
 				    	}

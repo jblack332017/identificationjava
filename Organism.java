@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Organism {
 	String name;
 	public ArrayList<Hit> hits = new ArrayList<>();
+	public ArrayList<Hit> matches = new ArrayList<>();
 	public ArrayList<ArrayList<Hit>> hitsHolder = new ArrayList<>();
 	
 	
