@@ -53,7 +53,7 @@ public class Parser {
 	                	}
 	    	            
 	                	
-	    	            if (line.contains("</Hsp>")){      	    	        
+	    	            if (line.contains("</Hsp>")&&hit.positive!=hit.alignLength){      	    	        
 	    	            	System.out.println(hit.id);
 	    	            	organism.addHit(hit);
 	    	            }
