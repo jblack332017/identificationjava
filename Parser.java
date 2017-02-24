@@ -65,6 +65,7 @@ public class Parser {
 						}
 	    	            
 	    	            else if (line.contains("<Hsp_gaps>")) {
+	    	            	System.out.println(value);
 							hit.setGaps(Integer.parseInt(value));
 						}
 	    	            else if (line.contains("<Hsp_score>")) {
