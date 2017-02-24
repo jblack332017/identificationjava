@@ -51,10 +51,9 @@ public class Parser {
 	                		value = m.group(1); //is your string. do what you want
 	                	}
 	    	            
-	                	System.out.println(line);
-	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength){      
-		                	System.out.println(hit.getPositive()+"   "+hit.getAlignLength());
-
+	                	
+	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength&&!organism.containsID(hit.getId())){      	    	        
+	    	            	System.out.println(hit.id);
 	    	            	organism.addHit(hit);
 	    	            }
 	    	            else if (line.contains("<Hit>")) {
