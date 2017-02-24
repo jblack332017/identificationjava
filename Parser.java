@@ -52,7 +52,6 @@ public class Parser {
 	                	}
 	    	            
 	                	
-    	            	System.out.println(line);
 
 	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength&&!organism.containsID(hit.getId())){      	    	        
 	    	            	organism.addHit(hit);
