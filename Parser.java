@@ -52,7 +52,8 @@ public class Parser {
 	                	}
 	    	            
 	                	
-	                	
+    	            	System.out.println(line);
+
 	    	            if (line.contains("</Hit>")&&hit.getPositive()!=hit.alignLength&&!organism.containsID(hit.getId())){      	    	        
 	    	            	organism.addHit(hit);
 	    	            }
@@ -65,7 +66,6 @@ public class Parser {
 						}
 	    	            
 	    	            else if (line.contains("<Hsp_gaps>")) {
-	    	            	System.out.println(line);
 							hit.setGaps(Integer.parseInt(value));
 						}
 	    	            else if (line.contains("<Hsp_score>")) {
