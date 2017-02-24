@@ -65,13 +65,13 @@ public class Select {
 					writer = new PrintWriter("inputFastas"+number+"/"+organism.getName(), "UTF-8");
 				
 			    StringBuilder stringBuilder = new StringBuilder();
-				System.out.println(organisms.size());
+				//System.out.println(organisms.size());
 
 				
 				for (int i=0; i< organism.hits.size();i++)
 				{
 					Hit hit = organism.hits.get(i);
-					System.out.println(organisms.size());
+					//System.out.println(organisms.size());
 
 										    
 					stringBuilder.append(">");
