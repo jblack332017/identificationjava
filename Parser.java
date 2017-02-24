@@ -22,6 +22,7 @@ public class Parser {
 	}
 	
 	public void populateHits(){
+		String id ="";
 		final File folder = new File(outputFile);
 		for (final File fileEntry : folder.listFiles()) {
 	            File output = new File(fileEntry.getPath());
@@ -52,16 +53,19 @@ public class Parser {
 	                	}
 	    	            
 	                	
-	    	            if (line.contains("</Hit>")){      	    	        
+	    	            if (line.contains("</Hsp>")){      	    	        
 	    	            	System.out.println(hit.id);
 	    	            	organism.addHit(hit);
 	    	            }
-	    	            else if (line.contains("<Hit>")) {
+	    	            else if (line.contains("<Hsp>")) {
 	    	            	hit = new Hit();
 							
 						}
 	    	            else if (line.contains("<Hit_id>")) {
-							hit.setId(value);
+							id = value;
+						}
+	    	            else if (line.contains("<Hsp_num>")) {
+							hit.setId(id+value);
 						}
 	    	            
 	    	            else if (line.contains("<Hsp_gaps>")) {
