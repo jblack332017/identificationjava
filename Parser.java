@@ -43,7 +43,7 @@ public class Parser {
 	                Hit hit = new Hit();
 	                while ((line = br.readLine()) != null) {
 	                   // process the line.
-//	    	            System.out.println(line);
+	                	//System.out.println(line);
 	                	String value="";
 	                	Pattern p = Pattern.compile("\\>(.*?)\\<");
 	                	Matcher m = p.matcher(line);
@@ -51,15 +51,14 @@ public class Parser {
 	                	{
 	                		value = m.group(1); //is your string. do what you want
 	                	}
-	    	            
 	                	
-	    	            if (line.contains("</Hsp>")&&hit.positive!=hit.alignLength){      	    	        
+	                	
+	    	            if (line.contains("</Hsp>")&&hit.positive!=hit.alignLength&&!organism.containsID(hit.getId())){      	    	        
 	    	            	System.out.println(hit.id);
 	    	            	organism.addHit(hit);
 	    	            }
 	    	            else if (line.contains("<Hsp>")) {
 	    	            	hit = new Hit();
-							
 						}
 	    	            else if (line.contains("<Hit_id>")) {
 							id = value;
@@ -67,7 +66,6 @@ public class Parser {
 	    	            else if (line.contains("<Hsp_num>")) {
 							hit.setId(id+value);
 						}
-	    	            
 	    	            else if (line.contains("<Hsp_gaps>")) {
 							hit.setGaps(Integer.parseInt(value));
 						}
@@ -103,9 +101,6 @@ public class Parser {
 	            
 	            organisms.put(fileName, organism);
 	            //System.out.print(organism.hits.size()+"\n");
-	            
-	            
-	            
 	            } catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
