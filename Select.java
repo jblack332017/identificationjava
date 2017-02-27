@@ -11,6 +11,8 @@ import java.util.TreeMap;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.jar.Attributes.Name;
 
+import org.w3c.dom.ls.LSException;
+
 
 public class Select {
 
@@ -94,7 +96,7 @@ public class Select {
 				    				if (first)
 				    				{
 				    					System.out.println(newHit.id);
-				    					System.out.println(originalName+": " +newHit.getHitSequence());
+				    					System.out.println("original" +originalName+": " +newHit.getHitSequence());
 				    					first = false;
 				    				}
 			    					System.out.println(newHit.id);
@@ -104,7 +106,6 @@ public class Select {
 				    		}
 				    	}
 					}
-	
 				   
 				}
 				 writer.print(stringBuilder.toString());
