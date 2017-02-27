@@ -82,6 +82,7 @@ public class Select {
 				    
 				    if (number == organisms.size()&&bottomCounter == organisms.size())
 					{
+				    	
 				    	boolean first = true;
 				    	for (String key: organisms.keySet())
 				    	{
@@ -92,6 +93,7 @@ public class Select {
 				    			{
 				    				if (first)
 				    				{
+				    					System.out.println(newHit.id);
 				    					System.out.println(originalName+": " +newHit.getHitSequence());
 				    					first = false;
 				    				}
