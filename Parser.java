@@ -64,7 +64,7 @@ public class Parser {
 							id = value;
 						}
 	    	            else if (line.contains("<Hsp_num>")) {
-							hit.setId(id);
+							hit.setId(id+"_"+value);
 						}
 	    	            else if (line.contains("<Hsp_gaps>")) {
 							hit.setGaps(Integer.parseInt(value));
