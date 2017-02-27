@@ -123,7 +123,7 @@ public class Select {
 			}
 		}
 		
-		if (number+1 < organisms.size()){
+		if (number < organisms.size()){
 		
 			String cmd = "python runBlast.py "+number;
 			
