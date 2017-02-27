@@ -97,6 +97,7 @@ public class Select {
 				    					System.out.println(originalName+": " +newHit.getHitSequence());
 				    					first = false;
 				    				}
+			    					System.out.println(newHit.id);
 				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());
 				    		
 				    			}
