@@ -32,6 +32,7 @@ public class Parser {
 
         		if (organisms.containsKey(fileName))
         		{
+        			System.out.println(fileName);
         			organism = organisms.get(fileName);
         			organism.newHits();
         			//System.out.println("new hits");
