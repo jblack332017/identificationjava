@@ -86,6 +86,7 @@ public class Select {
 					{
 				    	
 				    	boolean first = true;
+				    	System.out.println(organisms.size());
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
