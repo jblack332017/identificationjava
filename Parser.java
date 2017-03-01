@@ -54,7 +54,7 @@ public class Parser {
 	                	
 	                	
 	    	            if (line.contains("</Hsp>")&&hit.positive!=hit.alignLength&&!organism.containsID(hit.getId())){      	    	        
-	    	            	//System.out.println(hit.id);
+	    	            	System.out.println(organism.name+": "+ hit.id);
 	    	            	organism.addHit(hit);
 	    	            }
 	    	            else if (line.contains("<Hsp>")) {
