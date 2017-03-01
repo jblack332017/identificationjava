@@ -90,9 +90,12 @@ public class Select {
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
+			    			System.out.println(newOrganism.name);
+
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
 				    			System.out.println(newOrganism.name+ ": "+ newHit.id);
+
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
 				    				if (first)
