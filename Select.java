@@ -94,7 +94,7 @@ public class Select {
 
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
-				    			System.out.println(newOrganism.name+ ": "+ newHit.id);
+				    			//System.out.println(newOrganism.name+ ": "+ newHit.id);
 
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
