@@ -101,6 +101,9 @@ public class Select {
 				    				if (first)
 				    				{
 				    					System.out.println(newHit.id);
+				    					
+				    					if (newOrganism.getHitsHolder().size()>0)
+				    					{
 				    					for (Hit originalHit: newOrganism.getHitsHolder().get(0))
 				    					{
 				    						if (originalHit.getId().equals(newHit.getId()))
@@ -109,6 +112,11 @@ public class Select {
 						    					first = false;
 				    						}
 				    					}
+				    					}
+				    					else {
+			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+			    							first = false;
+										}
 				    					
 				    					
 				    				}
