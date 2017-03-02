@@ -67,7 +67,7 @@ public class Select {
 					writer = new PrintWriter("inputFastas"+number+"/"+organism.getName(), "UTF-8");
 				
 			    StringBuilder stringBuilder = new StringBuilder();
-				System.out.println("name"+organism.getName());
+				//System.out.println("name"+organism.getName());
 
 				
 				for (int i=0; i< organism.hits.size();i++)
@@ -90,7 +90,7 @@ public class Select {
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
-			    			System.out.println(newOrganism.name);
+			    			//System.out.println(newOrganism.name);
 
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
