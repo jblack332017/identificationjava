@@ -67,7 +67,7 @@ public class Select {
 					writer = new PrintWriter("inputFastas"+number+"/"+organism.getName(), "UTF-8");
 				
 			    StringBuilder stringBuilder = new StringBuilder();
-				//System.out.println(organisms.size());
+				System.out.println("name"+organism.getName());
 
 				
 				for (int i=0; i< organism.hits.size();i++)
