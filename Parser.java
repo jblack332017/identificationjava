@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +25,10 @@ public class Parser {
 	public void populateHits(){
 		String id ="";
 		final File folder = new File(outputFile);
-		for (final File fileEntry : folder.listFiles()) {
+		
+		File[] filesList = folder.listFiles();
+		Arrays.sort(filesList);
+		for (final File fileEntry : filesList) {
 	            File output = new File(fileEntry.getPath());
         		Organism organism = new Organism(fileEntry.getName());
         		String fileName = fileEntry.getName();

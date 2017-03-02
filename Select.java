@@ -5,6 +5,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeMap;
@@ -28,7 +29,9 @@ public class Select {
 	public void getOriginalName(){
 		final File folder = new File("inputFastas0");
 		boolean first = true;
-		for (final File fileEntry : folder.listFiles()) {
+		File[] filesList = folder.listFiles();
+		Arrays.sort(filesList);
+		for (final File fileEntry : filesList) {
 			
 			if (first)
 			{
