@@ -101,8 +101,16 @@ public class Select {
 				    				if (first)
 				    				{
 				    					System.out.println(newHit.id);
-				    					System.out.println("original" +originalName+": " +newHit.getHitSequence());
-				    					first = false;
+				    					for (Hit originalHit: newOrganism.getHitsHolder().get(0))
+				    					{
+				    						if (originalHit.getId().equals(newHit.getId()))
+				    						{
+				    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+						    					first = false;
+				    						}
+				    					}
+				    					
+				    					
 				    				}
 			    					System.out.println(newHit.id);
 				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());

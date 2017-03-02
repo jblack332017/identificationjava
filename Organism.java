@@ -51,6 +51,14 @@ public class Organism {
 		return false;
 		
 	}
+
+	public ArrayList<ArrayList<Hit>> getHitsHolder() {
+		return hitsHolder;
+	}
+
+	public void setHitsHolder(ArrayList<ArrayList<Hit>> hitsHolder) {
+		this.hitsHolder = hitsHolder;
+	}
 	
 	
 	

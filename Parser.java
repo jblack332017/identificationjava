@@ -43,7 +43,7 @@ public class Parser {
 	                String line;
 	                Hit hit = new Hit();
 	                while ((line = br.readLine()) != null) {
-	                   // process the line.
+	                   //process the line.
 	                	//System.out.println(line);
 	                	String value="";
 	                	Pattern p = Pattern.compile("\\>(.*?)\\<");
