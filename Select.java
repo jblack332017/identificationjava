@@ -105,7 +105,7 @@ public class Select {
 				    					{
 				    						if (originalHit.getId().equals(newHit.getId()))
 				    						{
-				    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+				    							System.out.println("original" +originalName+": " +originalHit.getHitSequence());
 						    					first = false;
 				    						}
 				    					}
