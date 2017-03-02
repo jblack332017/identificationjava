@@ -79,7 +79,7 @@ public class Select {
 					stringBuilder.append(">");
 					stringBuilder.append(hit.id);
 				    stringBuilder.append(System.getProperty("line.separator"));
-				    stringBuilder.append(hit.getHitSequence());
+				    stringBuilder.append(hit.getQuerySequence());
 				    stringBuilder.append(System.getProperty("line.separator"));	
 				    
 				    if (number == organisms.size()&&bottomCounter == organisms.size())
@@ -113,6 +113,7 @@ public class Select {
 					}
 				   
 				}
+				//System.out.println("out: "+);
 				 writer.print(stringBuilder.toString());
 				    writer.close();
 				    
