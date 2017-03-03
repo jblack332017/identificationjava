@@ -91,7 +91,7 @@ public class Select {
 					{
 				    	
 				    	boolean first = true;
-				    	System.out.println(organisms.keySet());
+				    	System.out.println("Last Name "+organism.getName());
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
@@ -109,7 +109,7 @@ public class Select {
 				    				{
 				    					System.out.println(newHit.id);
 				    					
-				    					//if (newOrganism.getHitsHolder().size()>0)
+				    					if (newOrganism.getHitsHolder().size()>0)
 				    					{
 				    					for (Hit originalHit: newOrganism.getHitsHolder().get(0))
 				    					{
@@ -122,16 +122,17 @@ public class Select {
 				    						}
 				    					}
 				    					}
-//				    					else {
-//			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
-//			    							first = false;
-//										}
+				    					else {
+			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+			    							first = false;
+//			    							match.addSequence(originalName, new);
+										}
 				    					
 				    					
 				    				}
 			    					System.out.println(newHit.id);
 				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());
-			    					match.addSequence(originalName, newHit.getQuerySequence());				    		
+			    					match.addSequence(newOrganism.name, newHit.getQuerySequence());				    		
 				    			}
 				    		}
 				    	}
