@@ -103,13 +103,13 @@ public class Select {
 				    			Match match = new Match(newHit.getId());
 				    			matches.put(newHit.getId(),match);
 
-//				    			if (newHit.getId().equals(hit.getId()))
+				    			if (newHit.getId().equals(hit.getId()))
 				    			{
 				    				if (first)
 				    				{
 				    					System.out.println(newHit.id);
 				    					
-				    					if (newOrganism.getHitsHolder().size()>0)
+				    					//if (newOrganism.getHitsHolder().size()>0)
 				    					{
 				    					for (Hit originalHit: newOrganism.getHitsHolder().get(0))
 				    					{
