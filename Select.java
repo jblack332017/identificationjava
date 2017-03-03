@@ -95,7 +95,7 @@ public class Select {
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
-			    			//System.out.println(newOrganism.name);
+			    			System.out.println("new organism: "+newOrganism.name);
 
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
