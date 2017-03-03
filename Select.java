@@ -107,7 +107,7 @@ public class Select {
 				    			{
 				    				if (first)
 				    				{
-				    					System.out.println(newHit.id);
+				    					System.out.println("first:"+ newOrganism.name+" "+newHit.id);
 				    					
 				    					//if (newOrganism.getHitsHolder().size()>0)
 				    					{
