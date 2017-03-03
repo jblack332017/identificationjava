@@ -109,7 +109,7 @@ public class Select {
 				    				{
 				    					System.out.println("first:"+ newOrganism.name+" "+newHit.id);
 				    					
-				    					//if (newOrganism.getHitsHolder().size()>0)
+				    					if (newOrganism.getHitsHolder().size()>0)
 				    					{
 				    					for (Hit originalHit: newOrganism.getHitsHolder().get(0))
 				    					{
@@ -122,11 +122,11 @@ public class Select {
 				    						}
 				    					}
 				    					}
-//				    					else {
-//			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
-//			    							first = false;
-////			    							match.addSequence(originalName, new);
-//										}
+				    					else {
+			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+			    							first = false;
+			    							match.addSequence(originalName, newHit.getHitSequence());
+										}
 				    					
 				    					
 				    				}
