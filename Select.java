@@ -18,6 +18,8 @@ import org.w3c.dom.ls.LSException;
 public class Select {
 
 	TreeMap<String,Organism> organisms;
+	TreeMap<String,Match> matches = new TreeMap<>();
+
 	String originalName = ""; 
 
 	public Select() {
@@ -98,6 +100,8 @@ public class Select {
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
 				    			//System.out.println(newOrganism.name+ ": "+ newHit.id);
+				    			Match match = new Match(newHit.getId());
+				    			matches.put(newHit.getId(),match);
 
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
@@ -105,7 +109,7 @@ public class Select {
 				    				{
 				    					System.out.println(newHit.id);
 				    					
-				    					if (newOrganism.getHitsHolder().size()>0)
+				    					//if (newOrganism.getHitsHolder().size()>0)
 				    					{
 				    					for (Hit originalHit: newOrganism.getHitsHolder().get(0))
 				    					{
@@ -113,19 +117,21 @@ public class Select {
 				    						{
 				    							System.out.println("original" +originalName+": " +originalHit.getHitSequence());
 						    					first = false;
+						    					match.addSequence(originalName, originalHit.getHitSequence());
+						    					
 				    						}
 				    					}
 				    					}
-				    					else {
-			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
-			    							first = false;
-										}
+//				    					else {
+//			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+//			    							first = false;
+//										}
 				    					
 				    					
 				    				}
 			    					System.out.println(newHit.id);
 				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());
-				    		
+			    					match.addSequence(originalName, newHit.getQuerySequence());				    		
 				    			}
 				    		}
 				    	}
