@@ -103,7 +103,7 @@ public class Select {
 				    			Match match = new Match(newHit.getId());
 				    			matches.put(newHit.getId(),match);
 
-				    			if (newHit.getId().equals(hit.getId()))
+//				    			if (newHit.getId().equals(hit.getId()))
 				    			{
 				    				if (first)
 				    				{
@@ -122,11 +122,11 @@ public class Select {
 				    						}
 				    					}
 				    					}
-				    					else {
-			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
-			    							first = false;
-//			    							match.addSequence(originalName, new);
-										}
+//				    					else {
+//			    							System.out.println("original" +originalName+": " +newHit.getHitSequence());
+//			    							first = false;
+////			    							match.addSequence(originalName, new);
+//										}
 				    					
 				    					
 				    				}
