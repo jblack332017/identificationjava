@@ -19,6 +19,8 @@ public class Select {
 
 	TreeMap<String,Organism> organisms;
 	TreeMap<String,Match> matches = new TreeMap<>();
+	TreeMap<String,Match> finalMatches = new TreeMap<>();
+
 
 	String originalName = ""; 
 
@@ -187,8 +189,24 @@ public class Select {
 		}
 		
 		}
+		removeduplicates();
+
 	}
 	
+	public void removeduplicates()
+	{
+		for (String id: matches.keySet()){
+			if (!matches.get(id).inOtherOrg())
+			{
+				finalMatches.put(id, matches.get(id));
+			}
+		}
+		
+		for (String id: finalMatches.keySet())
+		{
+			finalMatches.get(id).print();
+		}
+	}
 	
 
 }
