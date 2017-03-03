@@ -91,11 +91,11 @@ public class Select {
 					{
 				    	
 				    	boolean first = true;
-				    	System.out.println("Last Name "+organism.getName());
+				    	//System.out.println("Last Name "+organism.getName());
 				    	for (String key: organisms.keySet())
 				    	{
 				    		Organism newOrganism = organisms.get(key);
-			    			System.out.println("new organism: "+newOrganism.name);
+			    			//System.out.println("new organism: "+newOrganism.name);
 
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
@@ -107,7 +107,7 @@ public class Select {
 				    			{
 				    				if (first)
 				    				{
-				    					System.out.println("first:"+ newOrganism.name+" "+newHit.id);
+				    					System.out.println(newHit.id);
 				    					
 				    					if (newOrganism.getHitsHolder().size()>0)
 				    					{
