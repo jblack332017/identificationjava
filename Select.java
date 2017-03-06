@@ -190,6 +190,7 @@ public class Select {
 		}
 		
 		}
+		OrganismHolder.getInstance().populateOnelineFasta();
 		removeDuplicates();
 
 	}
