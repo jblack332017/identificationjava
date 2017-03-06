@@ -58,7 +58,7 @@ public class Match {
 			File[] filesList = folder.listFiles();
 			Arrays.sort(filesList);
 			for (final File fileEntry : filesList) {
-			if (organism.equals(fileEntry.getName())){
+			if (!organism.equals(fileEntry.getName())){
 
 				
 				
