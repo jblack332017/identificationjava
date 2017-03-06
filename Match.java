@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,7 +48,7 @@ public class Match {
 		sequences.put(organism, sequence);
 	}
 	
-	public boolean inOtherOrg(){
+	public boolean inOtherOrg() throws FileNotFoundException{
 		System.out.println("inother");
 		
 		for (String organism: sequences.keySet())
@@ -55,24 +56,28 @@ public class Match {
 			String sequence = sequences.get(organism);
 			String cleanSeq = sequence.replaceAll("-", "");
 			
-			TreeMap<String, String> oneLineFastas = OrganismHolder.getInstance().getOneLineFastas();
+			final File folder = new File("inputFastasOneLine");
+			File[] filesList = folder.listFiles();
+			Arrays.sort(filesList);
+			for (final File fileEntry : filesList) {
 			
-			for (String fastaFileName: oneLineFastas.keySet())
-			{
-				if (!fastaFileName.equals(organism))
-				{
-					if (oneLineFastas.get(fastaFileName).contains(cleanSeq))
-					{
-						return true;
-					}
-				}
+			Scanner scanner = new Scanner(fileEntry);
+			String logdata = scanner.useDelimiter("\\Z").next();
+			final String needle = cleanSeq;
+			int index = 0;
+			while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
+				scanner.close();
+				return true;
 			}
-			
+			scanner.close();
+
+			}
 			
 		}
 		
 		return false;
 	}
+		
 	
 	public void print() {
 		System.out.println(id);

@@ -190,7 +190,7 @@ public class Select {
 		}
 		
 		}
-		OrganismHolder.getInstance().populateOnelineFasta();
+		//OrganismHolder.getInstance().populateOnelineFasta();
 		removeDuplicates();
 
 	}
