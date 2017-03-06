@@ -60,24 +60,24 @@ public class Match {
 			File[] filesList = folder.listFiles();
 			Arrays.sort(filesList);
 			for (final File fileEntry : filesList) {
-			
-			Scanner scanner;
-			try {
-				scanner = new Scanner(fileEntry);
-			
-			String logdata = scanner.useDelimiter("\\Z").next();
-			final String needle = cleanSeq;
-			int index = 0;
-			while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
+			if (!fileEntry.getName().equals(organism)){
+				Scanner scanner;
+				try {
+					scanner = new Scanner(fileEntry);
+				
+				String logdata = scanner.useDelimiter("\\Z").next();
+				final String needle = cleanSeq;
+				int index = 0;
+				while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
+					scanner.close();
+					return true;
+				}
 				scanner.close();
-				return true;
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-			scanner.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
 			}
 			
 		}
