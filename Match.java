@@ -48,7 +48,7 @@ public class Match {
 		sequences.put(organism, sequence);
 	}
 	
-	public boolean inOtherOrg() throws FileNotFoundException{
+	public boolean inOtherOrg(){
 		System.out.println("inother");
 		
 		for (String organism: sequences.keySet())
@@ -61,7 +61,10 @@ public class Match {
 			Arrays.sort(filesList);
 			for (final File fileEntry : filesList) {
 			
-			Scanner scanner = new Scanner(fileEntry);
+			Scanner scanner;
+			try {
+				scanner = new Scanner(fileEntry);
+			
 			String logdata = scanner.useDelimiter("\\Z").next();
 			final String needle = cleanSeq;
 			int index = 0;
@@ -70,6 +73,10 @@ public class Match {
 				return true;
 			}
 			scanner.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			}
 			
