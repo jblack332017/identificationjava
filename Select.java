@@ -196,7 +196,7 @@ public class Select {
 	
 	public void removeDuplicates()
 	{
-		System.out.println(matches.lastKey().length());
+		System.out.println(matches.keySet().size());
 		for (String id: matches.keySet()){
 			if (!matches.get(id).inOtherOrg())
 			{
