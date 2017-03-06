@@ -91,7 +91,7 @@ public class Select {
 				    
 				    if (number == organisms.size()&&bottomCounter == organisms.size())
 					{
-				    	
+		    			Match match = new Match(hit.getId());
 				    	boolean first = true;
 				    	//System.out.println("Last Name "+organism.getName());
 				    	for (String key: organisms.keySet())
@@ -102,8 +102,6 @@ public class Select {
 				    		for (Hit newHit: newOrganism.hits)
 				    		{
 				    			//System.out.println(newOrganism.name+ ": "+ newHit.id);
-				    			Match match = new Match(newHit.getId());
-				    			matches.put(newHit.getId(),match);
 
 				    			if (newHit.getId().equals(hit.getId()))
 				    			{
@@ -136,8 +134,11 @@ public class Select {
 				    				System.out.println(newOrganism.name+": "+ newHit.getQuerySequence());
 			    					match.addSequence(newOrganism.name, newHit.getQuerySequence());				    		
 				    			}
+				    			
 				    		}
 				    	}
+		    			matches.put(match.getId(),match);
+
 					}
 				   
 				}
