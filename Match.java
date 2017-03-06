@@ -48,6 +48,7 @@ public class Match {
 	}
 	
 	public boolean inOtherOrg(){
+		System.out.println("inother");
 		
 		for (String organism: sequences.keySet())
 		{

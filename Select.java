@@ -189,11 +189,11 @@ public class Select {
 		}
 		
 		}
-		removeduplicates();
+		removeDuplicates();
 
 	}
 	
-	public void removeduplicates()
+	public void removeDuplicates()
 	{
 		for (String id: matches.keySet()){
 			if (!matches.get(id).inOtherOrg())
