@@ -114,7 +114,7 @@ public class Match {
 			writer.print(stringBuilder.toString());
 			writer.close();
 			
-			String cmd = "mafft --globalpair --maxiterate 1000 matches/" + id + " > macthes/Out"+id;
+			String cmd = "mafft --globalpair --maxiterate 1000 matches/" + id + " > matches/Out"+id;
 			System.out.println(cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			p.waitFor();
