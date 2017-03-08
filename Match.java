@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -87,11 +88,40 @@ public class Match {
 		
 	
 	public void print() {
-		System.out.println(id);
-		for (String organism: sequences.keySet())
-		{
-			System.out.println("match "+organism+": "+sequences.get(organism));
+		
+		File directory = new File("matches");
+		
+		if (! directory.exists()){
+	        directory.mkdir();
+	        // If you require it to make the entire directory path including parents,
+	        // use directory.mkdirs(); here instead.
+	    }
+		try {
+			PrintWriter writer = new PrintWriter("matches"+id);
+			StringBuilder stringBuilder = new StringBuilder();
+			
+			System.out.println(id);
+			for (String organism: sequences.keySet())
+			{
+				System.out.println("match "+organism+": "+sequences.get(organism));
+				stringBuilder.append(">");
+				stringBuilder.append(organism);
+			    stringBuilder.append(System.getProperty("line.separator"));
+			    stringBuilder.append(sequences.get(organism));
+			    stringBuilder.append(System.getProperty("line.separator"));
+			}
+			
+			writer.print(stringBuilder.toString());
+			writer.close();
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+		
+		
 		
 	}
 	
