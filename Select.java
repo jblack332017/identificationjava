@@ -207,7 +207,7 @@ public class Select {
 		
 		for (String id: finalMatches.keySet())
 		{
-			finalMatches.get(id).print();
+			finalMatches.get(id).align();
 		}
 	}
 	

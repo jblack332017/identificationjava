@@ -87,7 +87,7 @@ public class Match {
 	}
 		
 	
-	public void print() {
+	public void align() {
 		
 		File directory = new File("matches");
 		
@@ -114,8 +114,18 @@ public class Match {
 			writer.print(stringBuilder.toString());
 			writer.close();
 			
+			String cmd = "mafft --globalpair --maxiterate 1000 " + id + " > Out"+id;
+			Process p = Runtime.getRuntime().exec(cmd);
+			p.waitFor();
+			
 			
 		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
