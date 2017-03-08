@@ -97,7 +97,7 @@ public class Match {
 	        // use directory.mkdirs(); here instead.
 	    }
 		try {
-			PrintWriter writer = new PrintWriter("matches"+id);
+			PrintWriter writer = new PrintWriter("matches/"+id);
 			StringBuilder stringBuilder = new StringBuilder();
 			
 			System.out.println(id);
