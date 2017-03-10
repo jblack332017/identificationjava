@@ -13,6 +13,8 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.print.DocFlavor.STRING;
+
 import org.omg.CORBA.portable.ValueBase;
 
 public class Match {
@@ -114,9 +116,10 @@ public class Match {
 			
 			writer.print(stringBuilder.toString());
 			writer.close();
-			String[] cmd = {"/fslhome/jblack33/bin/mafft", "--globalpair --maxiterate 1000 matches/" + id," > matches/Out"+id};
+			//String[] cmd = {"/fslhome/jblack33/bin/mafft", "--globalpair --maxiterate 1000 matches/" + id," > matches/Out"+id};
 
 	//String cmd = "/fslhome/jblack33/bin/mafft --globalpair --maxiterate 1000 matches/" + id;// + " > matches/Out"+id;
+			String cmd = "./runMafft.sh "+id;
 			System.out.println(cmd);
 			Process p = Runtime.getRuntime().exec(cmd);
 			
