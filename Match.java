@@ -114,7 +114,7 @@ public class Match {
 			
 			writer.print(stringBuilder.toString());
 			writer.close();
-			String[] cmd = {"/fslhome/jblack33/bin/mafft --globalpair --maxiterate 1000 matches/" + id," > matches/Out"+id};
+			String[] cmd = {"/fslhome/jblack33/bin/mafft", "--globalpair --maxiterate 1000 matches/" + id," > matches/Out"+id};
 
 	//String cmd = "/fslhome/jblack33/bin/mafft --globalpair --maxiterate 1000 matches/" + id;// + " > matches/Out"+id;
 			System.out.println(cmd);
