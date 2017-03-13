@@ -99,6 +99,15 @@ public class Match {
 	        // If you require it to make the entire directory path including parents,
 	        // use directory.mkdirs(); here instead.
 	    }
+		directory = new File("matchesOut");
+		
+		if (! directory.exists()){
+	        directory.mkdir();
+	        // If you require it to make the entire directory path including parents,
+	        // use directory.mkdirs(); here instead.
+	    }
+		
+		
 		try {
 			PrintWriter writer = new PrintWriter("matches/"+id);
 			StringBuilder stringBuilder = new StringBuilder();
