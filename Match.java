@@ -180,7 +180,7 @@ public class Match {
                 	}
                 	
                 	value = value.replaceAll("\n", "");
-                	
+                	System.out.println("value: "+value);
                 	if (!value.contains(">")){
                 		consensus += value;
                 	}
