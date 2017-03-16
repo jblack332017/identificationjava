@@ -165,6 +165,7 @@ public class Match {
 			
 			p.waitFor();
             File output = new File("consensus/"+id);
+            System.out.println("consensus/"+id);
 			BufferedReader br = new BufferedReader(new FileReader(output));
 
                 String line;
