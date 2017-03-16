@@ -180,7 +180,6 @@ public class Match {
                 		value = m.group(1); //is your string. do what you want
                 	}
                 	
-                	value = value.replaceAll("\n", "");
                 	System.out.println("value: "+value);
                 	if (!value.contains(">")){
                 		consensus += value;
