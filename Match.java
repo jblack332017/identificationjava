@@ -250,7 +250,7 @@ public class Match {
 		    writer.print(stringBuilder.toString());
 		    writer.close();
 		    
-		    String cmd = "primer3 < primer3Files";
+		    String cmd = "/fslhome/jblack33/software/primer3-2.3.7/src/primer3 < primer3Files";
 		    Process p = Runtime.getRuntime().exec(cmd);
 		    p.waitFor();
 		    
