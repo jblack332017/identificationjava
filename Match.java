@@ -183,7 +183,7 @@ public class Match {
                 }
                 br.close();
                 System.out.println("consensus: "+consensus);
-                runPrimer();
+                
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -198,7 +198,7 @@ public class Match {
 		
 		
 		
-		
+		runPrimer();
 	}
 	
 	public void runPrimer(){
