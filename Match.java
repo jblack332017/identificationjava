@@ -186,7 +186,7 @@ public class Match {
                 	}
                 }
                 br.close();
-                System.out.println(consensus);
+                System.out.println("consensus: "+consensus);
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -206,7 +206,7 @@ public class Match {
 	
 	public void runPrimer(){
 		File directory = new File("primer3Files");
-		
+
 		if (! directory.exists()){
 	        directory.mkdir();
 	        // If you require it to make the entire directory path including parents,
