@@ -19,6 +19,10 @@ import org.omg.CORBA.portable.ValueBase;
 
 public class Match {
 	
+	
+	
+
+	
 	String id = ""; 
 	String consensus = "";
 	
@@ -160,7 +164,29 @@ public class Match {
 			
 			
 			p.waitFor();
-			
+            File output = new File("consensus/"+id);
+			BufferedReader br = new BufferedReader(new FileReader(output));
+
+                String line;
+                while ((line = br.readLine()) != null) {
+                   //process the line.
+                	//System.out.println(line);
+                	String value="";
+                	Pattern p1 = Pattern.compile("\\>(.*?)\\<");
+                	Matcher m = p1.matcher(line);
+                	while(m.find())
+                	{
+                		value = m.group(1); //is your string. do what you want
+                	}
+                	
+                	value = value.replaceAll("\n", "");
+                	
+                	if (!value.contains(">")){
+                		consensus += value;
+                	}
+                }
+                br.close();
+                System.out.println(consensus);
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -176,6 +202,16 @@ public class Match {
 		
 		
 		
+	}
+	
+	public void runPrimer(){
+		File directory = new File("primer3Files");
+		
+		if (! directory.exists()){
+	        directory.mkdir();
+	        // If you require it to make the entire directory path including parents,
+	        // use directory.mkdirs(); here instead.
+	    }
 	}
 	
 
