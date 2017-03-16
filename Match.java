@@ -172,18 +172,12 @@ public class Match {
                 while ((line = br.readLine()) != null) {
                    //process the line.
                 	//System.out.println(line);
-                	System.out.println("line: "+line);
-                	String value="";
-                	Pattern p1 = Pattern.compile("\\>(.*?)\\<");
-                	Matcher m = p1.matcher(line);
-                	while(m.find())
-                	{
-                		value = m.group(1); //is your string. do what you want
-                	}
                 	
-                	System.out.println("value: "+value);
-                	if (!value.contains(">")){
-                		consensus += value;
+                	
+                	line = line.replaceAll("\n", "");
+                	System.out.println("value: "+line);
+                	if (!line.contains(">")){
+                		consensus += line;
                 	}
                 }
                 br.close();
