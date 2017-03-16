@@ -250,7 +250,7 @@ public class Match {
 		    writer.print(stringBuilder.toString());
 		    writer.close();
 		    
-		    String cmd = "./runPrimer3.sh";
+		    String cmd = "./runPrimer3.sh "+id;
 		    Process p = Runtime.getRuntime().exec(cmd);
 		    
 		    BufferedReader stdInput = new BufferedReader(new 
