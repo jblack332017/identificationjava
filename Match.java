@@ -198,7 +198,7 @@ public class Match {
 		
 		
 		
-		runPrimer();
+		//runPrimer();
 	}
 	
 	public void runPrimer(){
