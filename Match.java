@@ -172,6 +172,7 @@ public class Match {
                 while ((line = br.readLine()) != null) {
                    //process the line.
                 	//System.out.println(line);
+                	System.out.println("line: "+line);
                 	String value="";
                 	Pattern p1 = Pattern.compile("\\>(.*?)\\<");
                 	Matcher m = p1.matcher(line);
