@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -182,6 +183,7 @@ public class Match {
                 }
                 br.close();
                 System.out.println("consensus: "+consensus);
+                runPrimer();
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -207,6 +209,52 @@ public class Match {
 	        // If you require it to make the entire directory path including parents,
 	        // use directory.mkdirs(); here instead.
 	    }
+		
+		try {
+			PrintWriter writer = new PrintWriter("primer3Files/"+id, "UTF-8");
+			StringBuilder stringBuilder = new StringBuilder();
+			
+			stringBuilder.append("SEQUENCE_ID="+id);
+		    stringBuilder.append(System.getProperty("line.separator"));
+			stringBuilder.append("SEQUENCE_TEMPLATE="+consensus);
+		    stringBuilder.append(System.getProperty("line.separator"));
+			stringBuilder.append("SEQUENCE_TARGET=37,21");
+		    stringBuilder.append(System.getProperty("line.separator"));
+			stringBuilder.append("PRIMER_TASK=pick_detection_primers");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_PICK_LEFT_PRIMER=1");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_PICK_INTERNAL_OLIGO=1");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_PICK_RIGHT_PRIMER=1");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_OPT_SIZE=18");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_MIN_SIZE=15");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_MAX_SIZE=21");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_MAX_NS_ACCEPTED=1");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_PRODUCT_SIZE_RANGE=75-100");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("P3_FILE_FLAG=1");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("SEQUENCE_INTERNAL_EXCLUDED_REGION=37,21");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_EXPLAIN_FLAG=1");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("PRIMER_THERMODYNAMIC_PARAMETERS_PATH=/fslhome/jblack33/software/primer3-2.3.7/src/primer3_config/");
+		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("=");
+		    writer.print(stringBuilder.toString());
+		    writer.close();
+		    
+		    
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 
