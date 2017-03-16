@@ -250,8 +250,20 @@ public class Match {
 		    writer.print(stringBuilder.toString());
 		    writer.close();
 		    
+		    String cmd = "primer3 < primer3Files";
+		    Process p = Runtime.getRuntime().exec(cmd);
+		    p.waitFor();
+		    
+		    
+		    
 		    
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
