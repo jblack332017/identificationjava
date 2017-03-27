@@ -331,9 +331,9 @@ public class Match {
 			String logdata = scanner.useDelimiter("\\Z").next();
 			final String needle = primer;
 			int index = 0;
-			int counter =0;
+//			int counter =0;
 			while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
-				counter++;
+//				counter++;
 				System.out.println(fileEntry.getName()+": "+primer);
 				
 //				if (counter>1)
