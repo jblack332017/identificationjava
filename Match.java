@@ -288,7 +288,7 @@ public class Match {
 		    
 		    p.waitFor();
 		    
-		    for (int i=0; i<=counter;i++)
+		    for (int i=0; i<counter;i++)
 		    {
 		    	System.out.println("left: "+leftPrimers.get(i));
 		    	System.out.println("out: "+rightPrimers.get(i));
