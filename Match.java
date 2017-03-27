@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 import javax.print.DocFlavor.STRING;
 
 import org.omg.CORBA.portable.ValueBase;
+import org.w3c.dom.css.Counter;
 
 public class Match {
 	
@@ -290,8 +291,12 @@ public class Match {
 		    
 		    for (int i=0; i<counter;i++)
 		    {
-		    	System.out.println("left"+i+": "+leftPrimers.get(i));
-		    	System.out.println("out"+i+": "+rightPrimers.get(i));
+		    	if (checkPrimers(rightPrimers.get(i))&&checkPrimers(leftPrimers.get(i)))
+		    	{
+		    		System.out.println("left"+i+":"+leftPrimers.get(i));
+		    		System.out.println("right"+i+":"+rightPrimers.get(i));
+		    	}
+		    	
 
 		    }
 		    
@@ -308,6 +313,41 @@ public class Match {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	private boolean checkPrimers(String primer) {
+		// TODO Auto-generated method stub
+
+			int counter =0;
+			final File folder = new File("inputFastasOneLine");
+			File[] filesList = folder.listFiles();
+			Arrays.sort(filesList);
+			for (final File fileEntry : filesList) {
+			Scanner scanner;
+			try {
+				scanner = new Scanner(fileEntry);
+			
+			String logdata = scanner.useDelimiter("\\Z").next();
+			final String needle = primer;
+			int index = 0;
+			while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
+				scanner.close();
+				counter++;
+				
+				if (counter>1)
+				{
+					return false;
+				}
+			}
+			scanner.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+			return true;
+
 	}
 	
 
