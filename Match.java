@@ -290,8 +290,8 @@ public class Match {
 		    
 		    for (int i=0; i<counter;i++)
 		    {
-		    	System.out.println("left: "+leftPrimers.get(i));
-		    	System.out.println("out: "+rightPrimers.get(i));
+		    	System.out.println("left"+counter+": "+leftPrimers.get(i));
+		    	System.out.println("out"+counter+": "+rightPrimers.get(i));
 
 		    }
 		    
