@@ -333,7 +333,6 @@ public class Match {
 			int index = 0;
 			int counter =0;
 			while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
-				scanner.close();
 				counter++;
 				System.out.println(fileEntry.getName()+": "+primer);
 				
