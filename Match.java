@@ -318,11 +318,12 @@ public class Match {
 	private boolean checkPrimers(String primer) {
 		// TODO Auto-generated method stub
 
-			int counter =0;
+			
 			final File folder = new File("inputFastasOneLine");
 			File[] filesList = folder.listFiles();
 			Arrays.sort(filesList);
 			for (final File fileEntry : filesList) {
+			int counter =0;
 			Scanner scanner;
 			try {
 				scanner = new Scanner(fileEntry);
