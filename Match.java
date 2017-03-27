@@ -337,10 +337,10 @@ public class Match {
 				counter++;
 				System.out.println(fileEntry.getName()+": "+primer);
 				
-				if (counter>1)
-				{
-					return false;
-				}
+//				if (counter>1)
+//				{
+//					return false;
+//				}
 			}
 			scanner.close();
 			} catch (FileNotFoundException e) {
