@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -28,6 +29,8 @@ public class Match {
 	String consensus = "";
 	
 	TreeMap<String,String> sequences = new TreeMap<>();
+	ArrayList<String> rightPrimers = new ArrayList<>();
+	ArrayList<String> leftPrimers = new ArrayList<>();
 	
 	
 
@@ -262,8 +265,18 @@ public class Match {
 				// read the output from the command
 				System.out.println("Here is the standard output of the command:\n");
 				String s = null;
+				int counter = 0;
 				while ((s = stdInput.readLine()) != null) {
 				    System.out.println(s);
+				    if (s.contains("PRIMER_LEFT_"+counter+"_SEQUENCE="))
+				    {
+				    	leftPrimers.add(s.split("=")[1]);
+				    }
+				    if (s.contains("PRIMER_RIGHT_"+counter+"_SEQUENCE="))
+				    {
+				    	rightPrimers.add(s.split("=")[1]);
+				    	counter++;
+				    }
 				}
 
 				// read any errors from the attempted command
@@ -274,6 +287,13 @@ public class Match {
 		    
 		    
 		    p.waitFor();
+		    
+		    for (int i=0; i<=counter;i++)
+		    {
+		    	System.out.println("left: "+leftPrimers.get(i));
+		    	System.out.println("out: "+rightPrimers.get(i));
+
+		    }
 		    
 		    
 		    
