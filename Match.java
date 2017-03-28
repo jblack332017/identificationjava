@@ -301,8 +301,8 @@ public class Match {
 		    		BufferedReader br = new BufferedReader(new FileReader(fileEntry));
 		    		
 		    		String line = br.readLine();
-		    		System.out.println(line);
 		    		br.close();
+		    		System.out.println(line);
 		    		String value="";
                 	Pattern p1 = Pattern.compile(leftPrimers.get(i)+"(.*?)"+rightPrimers.get(i));
                 	Matcher m = p1.matcher(line);
