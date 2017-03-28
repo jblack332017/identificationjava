@@ -336,8 +336,12 @@ public class Match {
 				for(int searchIndex=0;searchIndex<ffline.length();) {
 					int index=ffline.indexOf(searchFor,searchIndex);
 					if(index!=-1) {
-						System.out.println("Line number " + lcnt);
+						//System.out.println("Line number " + lcnt);
 						searchCount++;
+						if (searchCount>1)
+						{
+							return false;
+						}
 						searchIndex+=index+searchLength;
 					} else {
 						break;
@@ -345,7 +349,7 @@ public class Match {
 				}
 				
 			}
-			System.out.println(fileEntry.getName()+" = "+searchCount);
+			//System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
 		} catch(Exception e) {
 			System.out.println(e);
