@@ -324,7 +324,7 @@ public class Match {
 		Arrays.sort(filesList);
 		for (final File fileEntry : filesList) {
 		
-		String searchFor = "good bye";
+		String searchFor = primer;
 		int searchLength=searchFor.length();
 		try {
 			BufferedReader bout = new BufferedReader (new FileReader (fileEntry));
