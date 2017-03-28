@@ -345,7 +345,7 @@ public class Match {
 				}
 				
 			}
-			System.out.println("SearchCount = "+searchCount);
+			System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
 		} catch(Exception e) {
 			System.out.println(e);
