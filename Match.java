@@ -303,7 +303,7 @@ public class Match {
 		    		String line = br.readLine();
 		    		br.close();
 		    		String value="";
-                	Pattern p1 = Pattern.compile("\\"+leftPrimers.get(i)+"(.*?)\\"+rightPrimers.get(i));
+                	Pattern p1 = Pattern.compile(leftPrimers.get(i)+"(.*?)"+rightPrimers.get(i));
                 	Matcher m = p1.matcher(line);
                 	while(m.find())
                 	{
