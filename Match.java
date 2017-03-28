@@ -310,8 +310,7 @@ public class Match {
                 		value = m.group(1); //is your string. do what you want
                 	}
 		    		
-		    		System.out.println("left"+i+":"+leftPrimers.get(i));
-		    		System.out.println("right"+i+":"+rightPrimers.get(i));
+		    		System.out.println(leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
 		    		}
 		    	}
 		    	
