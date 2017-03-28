@@ -302,7 +302,7 @@ public class Match {
 		    		
 		    		String line = br.readLine();
 		    		br.close();
-		    		String value= line.substring(line.indexOf(leftPrimers.get(i))+1, line.indexOf(rightPrimers.get(i)));
+		    		String value = line.substring(line.indexOf(leftPrimers.get(i))+1, line.indexOf(rightPrimers.get(i)));
 		    		System.out.println(leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
 		    		}
 		    	}
