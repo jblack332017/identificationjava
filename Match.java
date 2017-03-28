@@ -293,8 +293,26 @@ public class Match {
 		    {
 		    	if (checkPrime(rightPrimers.get(i))&&checkPrime(leftPrimers.get(i)))
 		    	{
+		    		
+		    		final File folder = new File("inputFastasOneLine");
+		    		File[] filesList = folder.listFiles();
+		    		Arrays.sort(filesList);
+		    		for (final File fileEntry : filesList) {
+		    		BufferedReader br = new BufferedReader(new FileReader(fileEntry));
+		    		
+		    		String line = br.readLine();
+		    		br.close();
+		    		String value="";
+                	Pattern p1 = Pattern.compile("\\"+leftPrimers.get(i)+"(.*?)\\"+rightPrimers.get(i));
+                	Matcher m = p1.matcher(line);
+                	while(m.find())
+                	{
+                		value = m.group(1); //is your string. do what you want
+                	}
+		    		
 		    		System.out.println("left"+i+":"+leftPrimers.get(i));
 		    		System.out.println("right"+i+":"+rightPrimers.get(i));
+		    		}
 		    	}
 		    	
 
