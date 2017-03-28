@@ -291,7 +291,7 @@ public class Match {
 		    
 		    for (int i=0; i<counter;i++)
 		    {
-		    	if (checkPrimers(rightPrimers.get(i))&&checkPrimers(leftPrimers.get(i)))
+		    	if (checkPrime(rightPrimers.get(i))&&checkPrime(leftPrimers.get(i)))
 		    	{
 		    		System.out.println("left"+i+":"+leftPrimers.get(i));
 		    		System.out.println("right"+i+":"+rightPrimers.get(i));
@@ -313,6 +313,45 @@ public class Match {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	private boolean checkPrime(String primer)
+	{
+	
+		final File folder = new File("inputFastasOneLine");
+		File[] filesList = folder.listFiles();
+		Arrays.sort(filesList);
+		for (final File fileEntry : filesList) {
+		
+		String searchFor = "good bye";
+		int searchLength=searchFor.length();
+		try {
+			BufferedReader bout = new BufferedReader (new FileReader (fileEntry));
+			String ffline = null;
+			int lcnt = 0;
+			int searchCount = 0;
+			while ((ffline = bout.readLine()) != null) {
+				lcnt++;
+				for(int searchIndex=0;searchIndex<ffline.length();) {
+					int index=ffline.indexOf(searchFor,searchIndex);
+					if(index!=-1) {
+						System.out.println("Line number " + lcnt);
+						searchCount++;
+						searchIndex+=index+searchLength;
+					} else {
+						break;
+					}
+				}
+				bout.close();
+			}
+			System.out.println("SearchCount = "+searchCount);
+		} catch(Exception e) {
+			System.out.println(e);
+		}
+		}
+		
+		return true;
 	}
 	
 	private boolean checkPrimers(String primer) {
