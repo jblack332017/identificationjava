@@ -343,9 +343,10 @@ public class Match {
 						break;
 					}
 				}
-				bout.close();
+				
 			}
 			System.out.println("SearchCount = "+searchCount);
+			bout.close();
 		} catch(Exception e) {
 			System.out.println(e);
 		}
