@@ -302,15 +302,7 @@ public class Match {
 		    		
 		    		String line = br.readLine();
 		    		br.close();
-		    		System.out.println(line);
-		    		String value="";
-                	Pattern p1 = Pattern.compile(leftPrimers.get(i)+"(.*?)"+rightPrimers.get(i));
-                	Matcher m = p1.matcher(line);
-                	while(m.find())
-                	{
-                		value = m.group(1); //is your string. do what you want
-                	}
-		    		
+		    		String value= line.substring(line.indexOf(leftPrimers.get(i))+1, line.indexOf(rightPrimers.get(i)));
 		    		System.out.println(leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
 		    		}
 		    	}
