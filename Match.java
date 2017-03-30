@@ -213,7 +213,7 @@ public class Match {
 		{
 			String nucelotide = nucleotides[i];
 			
-			if (i>20&&nucelotide.equals("n")&&(nucleotides.length-i)>20)
+			if (i>20&&(nucelotide.equals("n")||nucelotide.equals("-"))&&(nucleotides.length-i)>20)
 			{
 				return i+1;
 			}
