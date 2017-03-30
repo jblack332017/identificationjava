@@ -364,6 +364,10 @@ public class Match {
 			}
 			//System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
+			if (lcnt!=1)
+			{
+				return false;
+			}
 		} catch(Exception e) {
 			System.out.println(e);
 		}
