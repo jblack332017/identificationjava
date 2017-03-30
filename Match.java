@@ -15,6 +15,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.crypto.NullCipher;
 import javax.print.DocFlavor.STRING;
 
 import org.omg.CORBA.portable.ValueBase;
@@ -205,7 +206,31 @@ public class Match {
 	runPrimer();
 	}
 	
+	public int getTarget()
+	{
+		String[] nucleotides = consensus.split("");
+		for (int i =0; i< nucleotides.length;i++)
+		{
+			String nucelotide = nucleotides[i];
+			
+			if (i>20&&nucelotide.equals("n")&&(nucleotides.length-i)>20)
+			{
+				return i+1;
+			}
+			
+		}
+		
+		return -1;
+	}
+	
 	public void runPrimer(){
+		
+		int target = getTarget();
+		if (target==-1)
+		{
+			return;
+		}
+		
 		File directory = new File("primer3Files");
 
 		if (! directory.exists()){
@@ -222,8 +247,8 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 			stringBuilder.append("SEQUENCE_TEMPLATE="+consensus);
 		    stringBuilder.append(System.getProperty("line.separator"));
-//			stringBuilder.append("SEQUENCE_TARGET=37,21");
-//		    stringBuilder.append(System.getProperty("line.separator"));
+			stringBuilder.append("SEQUENCE_TARGET="+target);
+		    stringBuilder.append(System.getProperty("line.separator"));
 			stringBuilder.append("PRIMER_TASK=pick_detection_primers");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PICK_LEFT_PRIMER=1");
@@ -244,8 +269,8 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("P3_FILE_FLAG=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
-//		    stringBuilder.append("SEQUENCE_INTERNAL_EXCLUDED_REGION=37,21");
-//		    stringBuilder.append(System.getProperty("line.separator"));
+		    stringBuilder.append("SEQUENCE_INTERNAL_EXCLUDED_REGION="+target);
+		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_EXPLAIN_FLAG=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_THERMODYNAMIC_PARAMETERS_PATH=/fslhome/jblack33/software/primer3-2.3.7/src/primer3_config/");
