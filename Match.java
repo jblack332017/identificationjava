@@ -244,8 +244,8 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("P3_FILE_FLAG=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
-		    stringBuilder.append("SEQUENCE_INTERNAL_EXCLUDED_REGION=37,21");
-		    stringBuilder.append(System.getProperty("line.separator"));
+//		    stringBuilder.append("SEQUENCE_INTERNAL_EXCLUDED_REGION=37,21");
+//		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_EXPLAIN_FLAG=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_THERMODYNAMIC_PARAMETERS_PATH=/fslhome/jblack33/software/primer3-2.3.7/src/primer3_config/");
