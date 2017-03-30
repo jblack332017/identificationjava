@@ -228,7 +228,7 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PICK_LEFT_PRIMER=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
-		    stringBuilder.append("PRIMER_PICK_INTERNAL_OLIGO=0");
+		    stringBuilder.append("PRIMER_PICK_INTERNAL_OLIGO=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PICK_RIGHT_PRIMER=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
@@ -364,7 +364,7 @@ public class Match {
 			}
 			//System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
-			System.out.println(searchFor+" "+ fileEntry.getName()+"count: "+searchCount);
+			System.out.println(searchFor+ " "+ fileEntry.getName()+"count: "+searchCount);
 			if (searchCount!=1)
 			{
 				return false;
@@ -377,42 +377,7 @@ public class Match {
 		return true;
 	}
 	
-	private boolean checkPrimers(String primer) {
-		// TODO Auto-generated method stub
 
-			
-			final File folder = new File("inputFastasOneLine");
-			File[] filesList = folder.listFiles();
-			Arrays.sort(filesList);
-			for (final File fileEntry : filesList) {
-			
-			Scanner scanner;
-			try {
-				scanner = new Scanner(fileEntry);
-			
-			String logdata = scanner.useDelimiter("\\Z").next();
-			final String needle = primer;
-			int index = 0;
-//			int counter =0;
-			while (index < logdata.length() && (index = logdata.indexOf(needle, index)) >= 0) {
-//				counter++;
-				System.out.println(fileEntry.getName()+": "+primer);
-				
-//				if (counter>1)
-//				{
-//					return false;
-//				}
-			}
-			scanner.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-			return true;
-
-	}
 	
 
 }
