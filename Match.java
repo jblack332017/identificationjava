@@ -364,8 +364,8 @@ public class Match {
 			}
 			//System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
-			System.out.println(fileEntry.getName()+"count: "+lcnt);
-			if (lcnt!=1)
+			System.out.println(fileEntry.getName()+"count: "+searchCount);
+			if (searchCount!=1)
 			{
 				return false;
 			}
