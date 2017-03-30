@@ -222,8 +222,8 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 			stringBuilder.append("SEQUENCE_TEMPLATE="+consensus);
 		    stringBuilder.append(System.getProperty("line.separator"));
-			stringBuilder.append("SEQUENCE_TARGET=37,21");
-		    stringBuilder.append(System.getProperty("line.separator"));
+//			stringBuilder.append("SEQUENCE_TARGET=37,21");
+//		    stringBuilder.append(System.getProperty("line.separator"));
 			stringBuilder.append("PRIMER_TASK=pick_detection_primers");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PICK_LEFT_PRIMER=1");
