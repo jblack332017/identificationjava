@@ -238,7 +238,7 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_MAX_SIZE=21");
 		    stringBuilder.append(System.getProperty("line.separator"));
-		    stringBuilder.append("PRIMER_MAX_NS_ACCEPTED=1");
+		    stringBuilder.append("PRIMER_MAX_NS_ACCEPTED=0");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PRODUCT_SIZE_RANGE=75-100");
 		    stringBuilder.append(System.getProperty("line.separator"));
