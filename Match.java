@@ -253,7 +253,7 @@ public class Match {
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PICK_LEFT_PRIMER=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
-		    stringBuilder.append("PRIMER_PICK_INTERNAL_OLIGO=1");
+		    stringBuilder.append("PRIMER_PICK_INTERNAL_OLIGO=0");
 		    stringBuilder.append(System.getProperty("line.separator"));
 		    stringBuilder.append("PRIMER_PICK_RIGHT_PRIMER=1");
 		    stringBuilder.append(System.getProperty("line.separator"));
