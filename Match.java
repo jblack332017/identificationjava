@@ -208,12 +208,12 @@ public class Match {
 	
 	public int getTarget()
 	{
-		String[] nucleotides = consensus.split("");
+		char[] nucleotides = consensus.toCharArray();
 		for (int i =0; i< nucleotides.length;i++)
 		{
-			String nucelotide = nucleotides[i];
+			char nucelotide = nucleotides[i];
 			
-			if (i>20&&(nucelotide.equals("n")||nucelotide.equals("-"))&&(nucleotides.length-i)>20)
+			if (i>20&&(nucelotide=='n'||nucelotide=='-'||(nucelotide>='a'&&nucelotide<'z'))&&(nucleotides.length-i)>20)
 			{
 				return i+1;
 			}
