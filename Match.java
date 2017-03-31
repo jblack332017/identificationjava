@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
@@ -33,12 +34,21 @@ public class Match {
 	TreeMap<String,String> sequences = new TreeMap<>();
 	ArrayList<String> rightPrimers = new ArrayList<>();
 	ArrayList<String> leftPrimers = new ArrayList<>();
+	HashMap<String, String> complements = new HashMap<>();
+	
 	
 	
 
 	public Match(String id) {
-		super();
 		this.id = id;
+		complements.put("A", "T");
+		complements.put("T", "A");
+		complements.put("G", "C");
+		complements.put("C", "G");
+		complements.put("a", "t");
+		complements.put("t", "a");
+		complements.put("g", "c");
+		complements.put("c", "g");
 	}
 
 	public String getId() {
@@ -316,7 +326,8 @@ public class Match {
 		    
 		    for (int i=0; i<counter;i++)
 		    {
-		    	if (checkPrime(rightPrimers.get(i))&&checkPrime(leftPrimers.get(i)))
+		    	String rightComplement = reversecomplement(rightPrimers.get(i));
+		    	if (checkPrime(rightComplement)&&checkPrime(leftPrimers.get(i)))
 		    	{
 		    		
 		    		final File folder = new File("inputFastasOneLine");
@@ -351,6 +362,17 @@ public class Match {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	
+	private String reversecomplement(String sequence)
+	{
+		String reverseComplement = new StringBuilder(sequence).reverse().toString();
+		for (String key: complements.keySet())
+		{
+			reverseComplement = reverseComplement.replaceAll(key, complements.get(key));
+		}
+		return reverseComplement;
 	}
 	
 	
