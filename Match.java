@@ -372,6 +372,7 @@ public class Match {
 		for (char nucleotide: reverse.toCharArray())
 		{
 			reverseComplement +=complements.get(nucleotide);
+			System.out.println(reverseComplement);
 		}
 		return reverseComplement;
 	}
