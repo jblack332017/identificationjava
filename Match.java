@@ -337,12 +337,13 @@ public class Match {
 		    		BufferedReader br = new BufferedReader(new FileReader(fileEntry));
 		    		
 		    		String line = br.readLine();
-		    		br.close();
+		    		
 		    		//System.out.println(line);
 		    		//System.out.println(leftPrimers.get(i));
 		    		//System.out.println(rightPrimers.get(i));
 		    		String value = line.substring(line.indexOf(leftPrimers.get(i)), line.indexOf(rightComplement));
-		    		System.out.println(leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
+		    		System.out.println(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
+		    		br.close();
 		    		}
 		    	}
 		    	
