@@ -367,10 +367,11 @@ public class Match {
 	
 	private String reversecomplement(String sequence)
 	{
-		String reverseComplement = new StringBuilder(sequence).reverse().toString();
-		for (String key: complements.keySet())
+		String reverseComplement ="";
+		String reverse = new StringBuilder(sequence).reverse().toString();
+		for (char nucleotide: reverse.toCharArray())
 		{
-			reverseComplement = reverseComplement.replaceAll(key, complements.get(key));
+			reverseComplement +=complements.get(nucleotide);
 		}
 		return reverseComplement;
 	}
