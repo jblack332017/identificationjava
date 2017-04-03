@@ -369,7 +369,7 @@ public class Match {
 	{
 		String reverseComplement ="";
 		String reverse = new StringBuilder(sequence).reverse().toString();
-		for (char nucleotide: reverse.toCharArray())
+		for (String nucleotide: reverse.split(""))
 		{
 			reverseComplement +=complements.get(nucleotide);
 			System.out.println(reverseComplement);
