@@ -338,9 +338,9 @@ public class Match {
 		    		
 		    		String line = br.readLine();
 		    		br.close();
-		    		System.out.println(line);
-		    		System.out.println(leftPrimers.get(i));
-		    		System.out.println(rightPrimers.get(i));
+		    		//System.out.println(line);
+		    		//System.out.println(leftPrimers.get(i));
+		    		//System.out.println(rightPrimers.get(i));
 		    		String value = line.substring(line.indexOf(leftPrimers.get(i)), line.indexOf(rightComplement));
 		    		System.out.println(leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
 		    		}
