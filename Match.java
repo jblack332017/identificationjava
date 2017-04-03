@@ -34,21 +34,21 @@ public class Match {
 	TreeMap<String,String> sequences = new TreeMap<>();
 	ArrayList<String> rightPrimers = new ArrayList<>();
 	ArrayList<String> leftPrimers = new ArrayList<>();
-	HashMap<String, String> complements = new HashMap<>();
+	HashMap<Character, Character> complements = new HashMap<>();
 	
 	
 	
 
 	public Match(String id) {
 		this.id = id;
-		complements.put("A", "T");
-		complements.put("T", "A");
-		complements.put("G", "C");
-		complements.put("C", "G");
-		complements.put("a", "t");
-		complements.put("t", "a");
-		complements.put("g", "c");
-		complements.put("c", "g");
+		complements.put('A', 'T');
+		complements.put('T', 'A');
+		complements.put('G', 'C');
+		complements.put('C', 'G');
+		complements.put('a', 't');
+		complements.put('t', 'a');
+		complements.put('g', 'c');
+		complements.put('c', 'g');
 	}
 
 	public String getId() {
@@ -369,7 +369,7 @@ public class Match {
 	{
 		String reverseComplement ="";
 		String reverse = new StringBuilder(sequence).reverse().toString();
-		for (String nucleotide: reverse.split(""))
+		for (char nucleotide: reverse.toCharArray())
 		{
 			reverseComplement +=complements.get(nucleotide);
 			System.out.println(reverseComplement);
