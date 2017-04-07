@@ -324,6 +324,17 @@ public class Match {
 		    
 		    p.waitFor();
 		    
+		    
+		    File direct = new File("output");
+			
+			if (! direct.exists()){
+		        direct.mkdir();
+		        // If you require it to make the entire directory path including parents,
+		        // use directory.mkdirs(); here instead.
+		    }
+			
+			PrintWriter write = new PrintWriter("output/"+id);
+		    
 		    for (int i=0; i<counter;i++)
 		    {
 		    	String rightComplement = reversecomplement(rightPrimers.get(i));
@@ -342,7 +353,7 @@ public class Match {
 		    		//System.out.println(leftPrimers.get(i));
 		    		//System.out.println(rightPrimers.get(i));
 		    		String value = line.substring(line.indexOf(leftPrimers.get(i)), line.indexOf(rightComplement));
-		    		System.out.println(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
+		    		write.println(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
 		    		br.close();
 		    		}
 		    	}
@@ -350,7 +361,7 @@ public class Match {
 
 		    }
 		    
-		    
+		    write.close();
 		    
 		    
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
@@ -414,7 +425,7 @@ public class Match {
 			}
 			//System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
-			System.out.println(searchFor+ " "+ fileEntry.getName()+"count: "+searchCount);
+			//System.out.println(searchFor+ " "+ fileEntry.getName()+"count: "+searchCount);
 			if (searchCount!=1)
 			{
 				return false;
