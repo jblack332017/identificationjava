@@ -352,7 +352,7 @@ public class Match {
 		    		//System.out.println(line);
 		    		//System.out.println(leftPrimers.get(i));
 		    		//System.out.println(rightPrimers.get(i));
-		    		String value = line.substring(line.indexOf(leftPrimers.get(i))+leftPrimers.get(i)+1, line.indexOf(rightComplement));
+		    		String value = line.substring(line.indexOf(leftPrimers.get(i))+leftPrimers.get(i).length()+1, line.indexOf(rightComplement));
 		    		stringBuilder2.append(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i)+"\n");
 		    		br.close();
 		    		}
