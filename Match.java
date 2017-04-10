@@ -363,6 +363,7 @@ public class Match {
 		    if (stringBuilder2.length()>0)
 		    {
 		    	PrintWriter write = new PrintWriter("output/"+id);
+		    	write.print(stringBuilder2.toString());
 		    	write.close();
 		    }
 		    
