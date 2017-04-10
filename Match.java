@@ -365,6 +365,7 @@ public class Match {
 		    {
 		    	PrintWriter write = new PrintWriter("output/"+id);
 		    	write.print(stringBuilder2.toString());
+		    	stringBuilder2 = new StringBuilder();
 		    	write.close();
 		    }
 		    
