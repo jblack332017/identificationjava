@@ -333,7 +333,7 @@ public class Match {
 		        // use directory.mkdirs(); here instead.
 		    }
 			
-			PrintWriter write = new PrintWriter("output/"+id);
+			StringBuilder stringBuilder2 = new StringBuilder();
 		    
 		    for (int i=0; i<counter;i++)
 		    {
@@ -353,15 +353,18 @@ public class Match {
 		    		//System.out.println(leftPrimers.get(i));
 		    		//System.out.println(rightPrimers.get(i));
 		    		String value = line.substring(line.indexOf(leftPrimers.get(i)), line.indexOf(rightComplement));
-		    		write.println(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i));
+		    		stringBuilder2.append(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i)+"\n");
 		    		br.close();
 		    		}
 		    	}
 		    	
 
 		    }
-		    
-		    write.close();
+		    if (stringBuilder2.length()>0)
+		    {
+		    	PrintWriter write = new PrintWriter("output/"+id);
+		    	write.close();
+		    }
 		    
 		    
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
