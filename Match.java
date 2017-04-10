@@ -348,7 +348,7 @@ public class Match {
 		    		BufferedReader br = new BufferedReader(new FileReader(fileEntry));
 		    		
 		    		String line = br.readLine();
-		    		
+		    		System.out.println("IT MADE IT HEREERERERERERERERERERERERERERERERERERE++++___+++++");
 		    		//System.out.println(line);
 		    		//System.out.println(leftPrimers.get(i));
 		    		//System.out.println(rightPrimers.get(i));
@@ -361,7 +361,7 @@ public class Match {
 		    	
 		    	
 		    }
-		    if (stringBuilder2.length()>0)
+		    if (stringBuilder2.length()>5)
 		    {
 		    	PrintWriter write = new PrintWriter("output/"+id);
 		    	write.print(stringBuilder2.toString());
