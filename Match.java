@@ -417,8 +417,9 @@ public class Match {
 				for(int searchIndex=0;searchIndex<ffline.length();) {
 					int index=ffline.indexOf(searchFor,searchIndex);
 					if(index!=-1) {
-						//System.out.println("Line number " + lcnt);
+						
 						searchCount++;
+						System.out.println("Line number " + searchCount);
 						if (searchCount>1)
 						{
 							return false;
