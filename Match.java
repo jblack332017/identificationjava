@@ -334,9 +334,10 @@ public class Match {
 		    }
 			
 			StringBuilder stringBuilder2 = new StringBuilder();
-		    
 		    for (int i=0; i<counter;i++)
 		    {
+			    System.out.println("check primers");
+
 		    	String rightComplement = reversecomplement(rightPrimers.get(i));
 		    	if (checkPrime(rightComplement)&&checkPrime(leftPrimers.get(i)))
 		    	{
