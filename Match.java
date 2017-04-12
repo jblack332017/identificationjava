@@ -397,7 +397,7 @@ public class Match {
 	}
 	
 	
-	private boolean checkPrime(String primer)
+	private boolean checkPrim(String primer)
 	{
 		primer = primer.toUpperCase();
 		final File folder = new File("inputFastasOneLine");
@@ -442,6 +442,68 @@ public class Match {
 			System.out.println(e);
 		}
 		}
+		
+		return true;
+	}
+	
+	private boolean checkPrime(String primer) {
+		
+		String primerRegex ="";
+		for (char c: primer.toCharArray())
+		{
+			primerRegex+=c;
+			if (Character.isLowerCase(c))
+			{
+				primerRegex += "?";
+			}
+		}
+		
+		
+		
+		final File folder = new File("inputFastasOneLine");
+		File[] filesList = folder.listFiles();
+		Arrays.sort(filesList);
+		for (final File fileEntry : filesList) {
+		
+	      
+	      
+	      try {
+			BufferedReader bout = new BufferedReader (new FileReader (fileEntry));
+			String line ="";
+			Pattern p = Pattern.compile(primerRegex);
+			while ((line = bout.readLine()) != null) {
+				
+				
+				 
+			      Matcher m = p.matcher(line);   // get a matcher object
+			      int count = 0;
+
+			      while(m.find()) {
+			         count++;
+			         if (count>1)
+			         {
+			        	 return false;
+			         }
+			         System.out.println("Match number "+count);
+			         System.out.println("start(): "+m.start());
+			         System.out.println("end(): "+m.end());
+			      }
+				
+				
+			}
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	      
+		}
+		
 		
 		return true;
 	}
