@@ -434,7 +434,7 @@ public class Match {
 			//System.out.println(fileEntry.getName()+" = "+searchCount);
 			bout.close();
 			System.out.println(searchFor+ " "+ fileEntry.getName()+"count: "+searchCount);
-			if (searchCount!=1)
+			if (searchCount>1)
 			{
 				return false;
 			}
