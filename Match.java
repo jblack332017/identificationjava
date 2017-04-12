@@ -339,7 +339,8 @@ public class Match {
 			    System.out.println("check primers");
 
 		    	String rightComplement = reversecomplement(rightPrimers.get(i));
-		    	if (checkPrime(rightComplement)&&checkPrime(leftPrimers.get(i)))
+		    	int rightStart=0, leftStart=0;
+		    	if ((rightStart= checkPrime(rightComplement))!=-1 && (leftStart= checkPrime(leftPrimers.get(i)))!=-1)
 		    	{
 		    		
 		    		final File folder = new File("inputFastasOneLine");
@@ -353,7 +354,7 @@ public class Match {
 		    		//System.out.println(line);
 		    		//System.out.println(leftPrimers.get(i));
 		    		//System.out.println(rightPrimers.get(i));
-		    		String value = line.substring(line.indexOf(leftPrimers.get(i))+leftPrimers.get(i).length(), line.indexOf(rightComplement));
+		    		String value = line.substring(leftStart+leftPrimers.get(i).length(), rightStart);
 		    		stringBuilder2.append(fileEntry.getName()+" "+ leftPrimers.get(i)+" "+value+" "+rightPrimers.get(i)+"\n");
 		    		br.close();
 		    		}
@@ -446,9 +447,10 @@ public class Match {
 		return true;
 	}
 	
-	private boolean checkPrime(String primer) {
+	private int checkPrime(String primer) {
 		
 		String primerRegex ="";
+		int toReturn = -1;
 		for (char c: primer.toCharArray())
 		{
 			primerRegex+=c;
@@ -480,13 +482,13 @@ public class Match {
 
 			      while(m.find()) {
 			         count++;
-			         
+			         toReturn = m.start();
 			         System.out.println("Match number "+count);
 			         System.out.println("start(): "+m.start());
 			         System.out.println("end(): "+m.end());
 			         if (count>1)
 			         {
-			        	 return false;
+			        	 return -1;
 			         }
 			      }
 				
@@ -506,7 +508,7 @@ public class Match {
 		}
 		
 		
-		return true;
+		return -1;
 	}
 	
 
