@@ -508,7 +508,7 @@ public class Match {
 		}
 		
 		
-		return -1;
+		return toReturn;
 	}
 	
 
