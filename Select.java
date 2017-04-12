@@ -199,7 +199,7 @@ public class Select {
 	{
 		System.out.println(matches.keySet().size());
 		for (String id: matches.keySet()){
-			if (!matches.get(id).inOtherOrg())
+			//if (!matches.get(id).inOtherOrg())
 			{
 				finalMatches.put(id, matches.get(id));
 			}
