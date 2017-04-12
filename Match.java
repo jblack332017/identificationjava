@@ -399,7 +399,7 @@ public class Match {
 	
 	private boolean checkPrime(String primer)
 	{
-	
+		primer = primer.toUpperCase();
 		final File folder = new File("inputFastasOneLine");
 		File[] filesList = folder.listFiles();
 		Arrays.sort(filesList);
