@@ -404,7 +404,7 @@ public class Match {
 		File[] filesList = folder.listFiles();
 		Arrays.sort(filesList);
 		for (final File fileEntry : filesList) {
-		
+		System.out.println(fileEntry.getName());
 		String searchFor = primer;
 		int searchLength=searchFor.length();
 		try {
