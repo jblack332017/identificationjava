@@ -480,13 +480,14 @@ public class Match {
 
 			      while(m.find()) {
 			         count++;
+			         
+			         System.out.println("Match number "+count);
+			         System.out.println("start(): "+m.start());
+			         System.out.println("end(): "+m.end());
 			         if (count>1)
 			         {
 			        	 return false;
 			         }
-			         System.out.println("Match number "+count);
-			         System.out.println("start(): "+m.start());
-			         System.out.println("end(): "+m.end());
 			      }
 				
 				
