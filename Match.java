@@ -453,10 +453,13 @@ public class Match {
 		int toReturn = -1;
 		for (char c: primer.toCharArray())
 		{
-			primerRegex+=c;
+			
 			if (Character.isLowerCase(c))
 			{
-				primerRegex += "?";
+				primerRegex += Character.toUpperCase(c)+"?";
+			}
+			else {
+				primerRegex+=c;
 			}
 		}
 		
