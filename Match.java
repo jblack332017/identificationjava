@@ -473,6 +473,7 @@ public class Match {
 			BufferedReader bout = new BufferedReader (new FileReader (fileEntry));
 			String line ="";
 			Pattern p = Pattern.compile(primerRegex);
+			System.out.println(primerRegex);
 			while ((line = bout.readLine()) != null) {
 				
 				
