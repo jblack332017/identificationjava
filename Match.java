@@ -340,7 +340,7 @@ public class Match {
 
 		    	String rightComplement = reversecomplement(rightPrimers.get(i));
 		    	int rightStart=0, leftStart=0;
-		    	if ((rightStart= checkPrime(rightComplement))!=-1 && (leftStart= checkPrime(leftPrimers.get(i)))!=-1)
+		    	//if ((rightStart= checkPrime(rightComplement))!=-1 && (leftStart= checkPrime(leftPrimers.get(i)))!=-1)
 		    	{
 		    		
 		    		final File folder = new File("inputFastasOneLine");
